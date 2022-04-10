@@ -1,3 +1,4 @@
+import 'package:base_project/services/debugger_service.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
@@ -18,7 +19,7 @@ class ApiService {
   /// [private] means api will require bearer/token to make add in header
   Future<Response?> makeGetRequest(String path,{Map<String,dynamic>? params,bool private = false}) async {
     if(private){
-      String token = await onAuthToken();
+      String token = await _onAuthToken();
       _baseOptions.headers.addAll({AUTHKEY:token});
     }else {
       _baseOptions.headers.remove(AUTHKEY);
@@ -26,14 +27,17 @@ class ApiService {
     try{
       return _dio.get(path,queryParameters: params);
     }catch(e){
-      
+      DebugLogger.getInstance().logE("Error while making a get request $e");
     }
+
+
+    return null;
   }
 
   /// onAuthToken can be useful whil generating authetication token for private apis
   /// developer just need to implement prefered auth provider awa,firebase,etc;'
   /// eg for firebase given below
-  Future<String> onAuthToken() async {
+  Future<String> _onAuthToken() async {
     /*Future<String> onAuthToken() async {
       bool isAnonymous  = FirebaseAuth.instance.currentUser?.isAnonymous == true;
 

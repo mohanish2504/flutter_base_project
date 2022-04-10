@@ -4,11 +4,10 @@ import 'package:logger/logger.dart';
 
 
 class DebugLogger {
-  static DebugLogger _debugLogger = DebugLogger._();
+  static final DebugLogger _debugLogger = DebugLogger._();
   static late Logger _logger;
 
   static DebugLogger getInstance(){
-    _debugLogger ??= DebugLogger._();
     return _debugLogger;
   }
 
