@@ -1,3 +1,4 @@
+import 'package:base_project/utils/strings.dart';
 import 'package:flutter/material.dart';
 class Home extends StatefulWidget {
   final String title;
@@ -38,14 +39,14 @@ class _HomeState extends State<Home> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            
+            TextButton(onPressed: (){}, child: Text(Strings.homeScreenLabels.addButtonLabel))
+
+
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

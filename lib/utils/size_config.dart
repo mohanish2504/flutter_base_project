@@ -43,7 +43,7 @@ class SizeConfig {
     heightMultiplier = _blockHeight;
     widthMultiplier = _blockWidth;
 
-    DebugLogger.getInstance().logD("MULTIPLIERS H:$heightMultiplier W:$widthMultiplier");
+    //DebugLogger.getInstance().logD("MULTIPLIERS H:$heightMultiplier W:$widthMultiplier");
 
     sizeMultiplier =
         _SizeMultiplier(heightMultiplier, widthMultiplier, imageSizeMultiplier);
@@ -59,10 +59,16 @@ class SizeConfig {
 class _SizeMultiplier {
   _SizeMultiplier(double heightMultiplier, double widthMultiplier,
       double imageSizeMultiplier) {
-    unitHeightMultiplier__16 = min(16, heightMultiplier * 2.15);
-    unitWidthMultiplier__16 = min(16, widthMultiplier * 4.15);
+    unitHeightMultiplier_16 = min(16, heightMultiplier * 2.15);
+    unitWidthMultiplier_16 = min(16, widthMultiplier * 3.89);
+
+    unitHeightMultiplier_12 = min(12, heightMultiplier * 1.76);
+    unitWidthMultiplier_12 = min(12, widthMultiplier * 2.91);
   }
 
-  late double unitHeightMultiplier__16;
-  late double unitWidthMultiplier__16;
+  late final double unitHeightMultiplier_16;
+  late final  double unitWidthMultiplier_16;
+
+  late final double unitHeightMultiplier_12;
+  late final double unitWidthMultiplier_12;
 }

@@ -1,3 +1,3 @@
 class Constants {
-  String aboutUsUrl = "/aboutUs";
+  static bool isDark = false;
 }

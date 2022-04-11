@@ -1,8 +1,10 @@
 class Strings {
-  static const LoginScreenLabels loginScreenLabels = LoginScreenLabels();
+  static const HomeScreenLabels homeScreenLabels = HomeScreenLabels();
 }
 
-class LoginScreenLabels {
-  const LoginScreenLabels();
-  final String logIn = 'LOG IN';
+class HomeScreenLabels {
+  const HomeScreenLabels();
+  final String appBarTitle = "Home";
+  final String addButtonLabel = 'ADD';
 }
+
